@@ -1,18 +1,18 @@
-= JQuery Plugins Template With Typescript
+# JQuery Plugins Template With Typescript
 
 Write JQuery plugins with Typescript. 
 
-== Setup
+## Setup
 ```
 npm i -d
 ```
 
-== Build
+## Build
 ```
 npm run build
 ```
 
-== Command often use
+## Command often use
 ```
 npm init
 npm install typescript --save-dev
