@@ -1,46 +1,59 @@
+/// <reference types='jquery'/>
+
 // Implement code logic
-interface IDemoConfig {
-    name?: string;
-    color?: string;
-}
-
-class Demo {    
-    private config: IDemoConfig;
-    private element: JQuery<HTMLElement>;
-    
-    constructor(config: IDemoConfig, element: JQuery<HTMLElement>) {
-        this.config = config;
-        this.element = element;
-        this.setup();
+// Defined namespace Demo
+module Demo {
+    // Defined interface config for plugin
+    export interface IDemoPluginConfig {
+        name?: string;
+        color?: string;
+        align?: string;
     }
+    // Defined main class plugin
+    export class DemoPlugin {
+        private config: IDemoPluginConfig;
+        private element: JQuery<HTMLElement>;
 
-    public setup(): void {
-        this.element.html(this.config.name);
-        this.element.css({
-            color: this.config.color
-        });
+        constructor(config: IDemoPluginConfig, element: JQuery<HTMLElement>) {
+            this.config = config;
+            this.element = element;
+            this.setup();
+        }
+
+        public setup(): void {
+            // Update text html
+            this.element.html(this.config.name);
+            // Update style text
+            this.element.css({
+                color: this.config.color,
+                textAlign: this.config.align
+            });
+        }
     }
 }
 // ----------------------------------------------------------------------
-// Defined plugin JQuery
+// Defined type plugin with JQuery
 interface JQuery {
-    demo(options: any): JQuery;
+    demoPlugin(options: any): JQuery;
 }
-
+// Register plugin JQuery
 (function ($) {
-    $.fn.demo = function (options: IDemoConfig): JQuery {
+    $.fn.demoPlugin = function (options?: Demo.IDemoPluginConfig): JQuery {
 
-        let config: IDemoConfig = {
+        let configDefault: Demo.IDemoPluginConfig = {
             name: "JQuery Plugin Template",
-            color: 'blue'
+            color: 'blue',
+            align: 'left'
         };
 
+        let settings: Demo.IDemoPluginConfig;
+
         if (options) {
-            $.extend(config, options);
+            settings = $.extend(configDefault, options);
         }
 
         return this.each(function () {
-            let demo = new Demo(config, $(this));
+            let demo = new Demo.DemoPlugin(settings, $(this));
         });
     };
 })(jQuery);    

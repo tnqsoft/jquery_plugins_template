@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#demoWidget {
+    border: 1px solid #dcdcdc;
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 10px;
+}
+
+#demoWidget .messages {
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    min-height: 300px;    
+}
+
+#demoWidget .message-item {
+    margin-bottom: 10px;
+}
+
+#demoWidget .messages .badge {
+    font-weight: normal;
+    font-size: 14px;
+    padding: 5px;
+}
