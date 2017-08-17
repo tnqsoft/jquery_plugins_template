@@ -12,6 +12,9 @@ npm i -d
 npm run build
 ```
 
+## Screenshot
+![ScreenShot](https://raw.github.com/tnqsoft/jquery_plugins_template/master/screenshot.jpg "ScreenShot")
+
 ## Command often use
 ```
 npm init
