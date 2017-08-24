@@ -12,18 +12,28 @@ npm i -d
 npm run build
 ```
 
+## Prepare Demo
+```
+npm run preparedemo
+```
+
+## Release
+```
+npm run release
+```
+
+## TSLint
+```
+npm run tslint
+```
+
+## TS Watch
+```
+npm run tsc:w
+```
+
 ## Screenshot
 ![ScreenShot](https://raw.github.com/tnqsoft/jquery_plugins_template/master/screenshot.jpg "ScreenShot")
-
-## Command often use
-```
-npm init
-npm install typescript --save-dev
-npm install jquery --save
-
-npm install @types/jquery --save-dev
-npm install @types/jqueryui --save-dev
-```
 
 ## References
 - [https://learn.jquery.com/plugins/](https://learn.jquery.com/plugins/)
